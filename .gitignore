@@ -1,2 +1,3 @@
-# the resume output
-resume.pdf
+*.log
+*.out
+*.aux
