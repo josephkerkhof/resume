@@ -1,6 +1,6 @@
 %-------------------------
 % Resume in Latex
-% Author : Jospeh Kerkhof
+% Author : Joseph Kerkhof
 % License : MIT
 %------------------------
 
@@ -19,6 +19,7 @@
 \usepackage{tabularx}
 \usepackage{hyphenat}
 \usepackage{fontawesome}
+\usepackage{iftex}
 
 
 %---------- FONT OPTIONS ----------
@@ -57,7 +58,9 @@
 }{}{0em}{}[\color{black}\titlerule{} \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
+\ifPDFTeX
+    \pdfgentounicode=1
+\fi
 
 %-------------------------
 % Custom commands
@@ -146,10 +149,10 @@
 
     \section{Summary}
     \vspace{3pt}
-    Senior Backend Engineer with 6+ years building scalable, high-performant systems.
-    Delivered complex products from ground-up (GM budget platform, NCAA-compliant payment systems) with 90\%+ test coverage and sub-second response times.
-    Deep expertise in system design, distributed architectures, and backend fundamentals.
-    Proficient in PHP/Laravel with hands-on experience in Go and Python.
+    Senior Backend Engineer with 7+ years designing secure, reliable web and cloud systems.
+    Built a production AI workflow platform, architected Kubernetes observability infrastructure, and delivered financial products with 90\%+ test coverage and sub-second response times.
+    Deep expertise in PHP/Laravel, system design, distributed architectures, and backend fundamentals, with hands-on experience in Go and Python.
+    Uses Claude Code and OpenCode with MCP integrations, repository context files, specialized skills, and automated guardrails to streamline development and review.
 
 %----------- SKILLS -----------
 
@@ -158,22 +161,72 @@
     \vspace{2pt}
     \resumeSubHeadingListStart{}
     \small{\item{%
-        \textbf{Backend:} {PHP, Laravel, MySQL, Redis, RESTful APIs, Asynchronous Processing, Event-Driven Architecture} \\ \vspace{3pt}
+        \textbf{Backend \& Data:} {PHP, Laravel, Go, Python, MySQL, Redis, Snowflake, REST APIs} \\ \vspace{3pt}
 
-        \textbf{Frontend:} {React, TypeScript, JavaScript, Jest} \\ \vspace{3pt}
+        \textbf{AI Engineering:} {Laravel AI, LangGraph, Claude Code, OpenCode, MCP Integrations, Agent Orchestration} \\ \vspace{3pt}
 
-        \textbf{Architecture:} {Domain Driven Design (DDD), CQRS, Action Pattern, SOLID Principles, Microservices} \\ \vspace{3pt}
+        \textbf{Cloud \& Delivery:} {AWS, Linux, Docker, Kubernetes, GitHub Actions, CI/CD} \\ \vspace{3pt}
 
-        \textbf{Infrastructure \& DevOps:} {AWS, Linux, Docker, CI/CD Pipelines, Horizontal Scaling} \\ \vspace{3pt}
+        \textbf{Architecture \& Quality:} {DDD, CQRS, Microservices, Pest, PHPUnit, PHPStan, Pint, TDD, Load Testing} \\ \vspace{3pt}
 
-        \textbf{Testing \& Quality:} {PHPUnit, Pest, Jest, TDD, Unit, Feature, Integration, Architecture \& Load Testing} \\ \vspace{3pt}
-
-        \textbf{Observability:} {Structured Logging, Distributed Tracing, StatsD Metrics} \\ \vspace{3pt}
-
-        \textbf{Methodologies:} {Agile/Scrum, Code Reviews, Technical Documentation} \\ \vspace{3pt}
+        \textbf{Observability \& Identity:} {OpenTelemetry, ClickStack/HyperDX, Distributed Tracing, Enterprise SSO} \\ \vspace{3pt}
 
     % \textbf{Applications}{: X, X, X}
     }}
+    \resumeSubHeadingListEnd{}
+
+
+%----------- WORK EXPERIENCE -----------
+
+
+    \section{Work Experience}
+    \vspace{3pt}
+    \resumeSubHeadingListStart{}
+
+    \resumeSubheading%
+    {Active Engagement}{Remote, USA}
+    {Senior Developer}{Oct 2025 \textbf{--} Present}
+    {Tech Stack: Laravel, Laravel AI, Python, LangGraph, Kubernetes, OpenTelemetry, GitHub Actions}
+    \resumeItemListStart{}
+    \resumeItem{Started and architected a modular Laravel AI platform from the ground up, establishing reusable workflows and modules now developed by three engineers to automate copywriting and an 11-stage email workflow across five business systems.}
+    \resumeItem{Engineered Anthropic-backed orchestrator and specialist agents with tools, persistent multimodal conversations, structured outputs, prompt caching, token-cost telemetry, and deterministic fallbacks; also prototyped Python agents with LangGraph.}
+    \resumeItem{Built and refined GitHub Actions CI/CD with Pint, maximum-level PHPStan/Larastan, TypeScript and security checks, 1,500+ Pest tests across five layers, sharded browser tests, atomic releases, and rollback support.}
+    \resumeItem{Designed and deployed ClickStack/HyperDX on autoscaling Kubernetes with Terraform and Helm, unifying logs, metrics, traces, RUM/session replay, AI cost telemetry, 7 dashboards, 14 alerts, uptime checks, backups, SSO, configuration-as-code, and documented recovery procedures.}
+    \resumeItem{Translated sparse product direction into iterative mockups with Claude Design, defined requirements with stakeholders, and guided junior engineers through PR reviews and daily technical feedback.}
+    \resumeItemListEnd{}
+
+    \resumeSubheading%
+    {Teamworks}{Remote, USA}
+    {Senior Software Engineer}{May 2024 \textbf{--} Sept 2025}
+    {Tech Stack: Laravel, PHP, MySQL, Redis, AWS, Kubernetes, CI/CD}
+    \resumeItemListStart{}
+    \resumeItem{Architected and delivered GM budget management product from the ground up in 3 months, processing athlete compensation across multiple universities with 90\% test coverage and daily production deployments via automated CI/CD pipelines.}
+    \resumeItem{Delivered integrated payment systems in 8 months ahead of the NCAA's July 2025 regulatory deadline, using Domain-Driven Design, CQRS, and action-based architecture to keep complex regulatory logic maintainable and testable.}
+    \resumeItem{Engineered a high-performance RESTful API achieving sub-second response times through optimized database queries and asynchronous processing with Redis queues, implementing comprehensive observability via structured logging, distributed tracing, and StatsD metrics.}
+    \resumeItemListEnd{}
+
+    \newpage
+    \resumeSubheading%
+    {Prodege}{Remote, USA}
+    {PHP Developer}{Mar 2023 \textbf{--} May 2024}
+    {Tech Stack: PHP, Laravel, MySQL, Google Ads SDK, Cron Jobs}
+    \resumeItemListStart{}
+    \resumeItem{Built an automated Google Ads campaign management system that cut launch time from 8 hours to 30 minutes and prevented \$20K-\$30K in monthly wasted spend through real-time budget optimization and alerting.}
+    \resumeItem{Modernized legacy PHP cron job infrastructure to Laravel 10, eliminating 15+ monthly job failures and reducing system maintenance time through improved error handling and monitoring.}
+    \resumeItem{Optimized MySQL queries on 200GB+ tables, reducing query execution time from 45 seconds to under 3 seconds and improving dashboard load times by 85\% through table redesign and proper indexing strategies.}
+    \resumeItem{Identified and remediated critical vulnerabilities including remote code execution, SQL injection, and exposed credentials.}
+    \resumeItemListEnd{}
+
+    \resumeSubheading%
+    {Clockwork}{Minneapolis, MN}
+    {Senior Software Engineer}{Mar 2019 \textbf{--} Mar 2023}
+    {Tech Stack: React, TypeScript, PHP, MySQL, Jest, AWS Serverless, Load Testing Tools}
+    \resumeItemListStart{}
+    \resumeItem{Built web products serving 50K+ users as team Delivery Lead, managing sprint planning for 6-person team while architecting React/TypeScript frontends.}
+    \resumeItem{Load-tested high-traffic website processing 100K+ daily requests to identify application and infrastructure bottlenecks, implementing horizontal scaling solutions that improved response times by 60\% and eliminated timeout errors.}
+    \resumeItem{Maintained a PHP/MySQL promotion engine serving 350K+ accounts and thousands of daily transactions with 99.9\% uptime; participated in on-call support for Minnesota Lottery applications.}
+    \resumeItemListEnd{}
+
     \resumeSubHeadingListEnd{}
 
 
@@ -188,47 +241,6 @@
     {University of Wisconsin — Oshkosh}{Oshkosh, WI}
     {M.Sc.\ in Data Science (Part-time);   \textbf{GPA:\@ 4.00/4.00}}{Sept 2017 \textbf{--} Jun 2021}
     {B.Sc.\ in Computer Science}{Sept 2011 \textbf{--} Jun 2016}
-
-    \resumeSubHeadingListEnd{}
-
-
-%----------- WORK EXPERIENCE -----------
-
-
-    \section{Work Experience}
-    \vspace{3pt}
-    \resumeSubHeadingListStart{}
-
-    \resumeSubheading%
-    {Teamworks}{Remote, USA}
-    {Senior Software Engineer}{May 2024 \textbf{--} Sept 2025}
-    {Tech Stack: Laravel, PHP, MySQL, Redis, AWS, Kubernetes, CI/CD}
-    \resumeItemListStart{}
-    \resumeItem{Architected and delivered GM budget management product from the ground up in 3 months, processing athlete compensation across multiple universities with 90\% test coverage and daily production deployments via automated CI/CD pipelines.}
-    \resumeItem{Delivered integrated payment systems in 8 months ahead of the NCAA's July 2025 regulatory deadline, implementing modern architectural patterns (Domain Driven Design, CQRS, Action Pattern) while strictly adhering to SOLID principles.}
-    \resumeItem{Engineered a high-performance RESTful API achieving sub-second response times through optimized database queries and asynchronous processing with Redis queues, implementing comprehensive observability via structured logging, distributed tracing, and StatsD metrics.}
-    \resumeItemListEnd{}
-
-    \resumeSubheading%
-    {Prodege}{Remote, USA}
-    {PHP Developer}{Mar 2023 \textbf{--} May 2024}
-    {Tech Stack: PHP, Laravel, MySQL, Google Ads SDK, Cron Jobs}
-    \resumeItemListStart{}
-    \resumeItem{Built automated Google Ads campaign management system reducing manual launch time from 8 hours to 30 minutes (90\% reduction), while preventing \$20K-\$30K monthly ad spend wastage through real-time budget optimization and alerting.}
-    \resumeItem{Modernized legacy PHP cron job infrastructure to Laravel 10, eliminating 15+ monthly job failures and reducing system maintenance time through improved error handling and monitoring.}
-    \resumeItem{Optimized MySQL queries on 200GB+ tables, reducing query execution time from 45 seconds to under 3 seconds and improving dashboard load times by 85\% through table redesign and proper indexing strategies.}
-    \resumeItem{Found and fixed security issues including but not limited to remote code execution, SQL injection, and leaked credentials.}
-    \resumeItemListEnd{}
-
-    \resumeSubheading%
-    {Clockwork}{Minneapolis, MN}
-    {Senior Software Engineer}{Mar 2019 \textbf{--} Mar 2023}
-    {Tech Stack: React, TypeScript, PHP, MySQL, Jest, AWS Serverless, Load Testing Tools}
-    \resumeItemListStart{}
-    \resumeItem{Built web products serving 50K+ users as team Delivery Lead, managing sprint planning for 6-person team while architecting React/TypeScript frontends.}
-    \resumeItem{Load-tested high-traffic website processing 100K+ daily requests to identify application and infrastructure bottlenecks, implementing horizontal scaling solutions that improved response times by 60\% and eliminated timeout errors.}
-    \resumeItem{Maintained and optimized high-volume promotion engine powering 350K+ customer accounts with thousands of daily transactions, ensuring 99.9\% uptime through proactive monitoring and performance tuning using PHP and MySQL.}
-    \resumeItemListEnd{}
 
     \resumeSubHeadingListEnd{}
 
@@ -257,14 +269,14 @@
     {\textbf{Omnibus Config File Validator} $|$ \emph{\href{https://gitlab.com/josephkerkhof-group/omnibus-config-checker}{\color{blue}GitLab}}}{}
     {Tech Stack: Golang, Cobra}
     \resumeItemListStart{}
-    \resumeItem{A tool for validating GitLab Omnibus (gitlab.rb) configuration files. It checks for common misconfigurations, security issues, and best practices in a simple-to-use CLI tool. Testing, linting, building, and validation are all done in GitLab pipelines.}
+    \resumeItem{Built a Go CLI that validates GitLab Omnibus configurations for security issues and common misconfigurations, with automated testing, linting, and builds in GitLab CI.}
     \resumeItemListEnd{}
 
     \resumeProjectHeading%
     {\textbf{GitHub RSS} $|$ \emph{\href{https://github.com/josephkerkhof/github-rss}{\color{blue}GitHub}}}{}
     {Tech Stack: PHP, Laravel, Inertia, Vue.js}
     \resumeItemListStart{}
-    \resumeItem{RSS feed generator for GitHub repository activity monitoring built with PHP/Laravel, demonstrating clean architecture, dependency injection, comprehensive testing, RESTful APIs with limit-offset and cursor pagination, and modern software engineering practices.}
+    \resumeItem{Built a GitHub activity feed service around interface-driven dependencies and in-memory test doubles, enabling fast, isolated unit tests while supporting REST APIs with limit-offset and cursor pagination.}
     \resumeItemListEnd{}
 
 %    \resumeProjectHeading%
