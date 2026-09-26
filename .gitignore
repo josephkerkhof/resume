@@ -2,4 +2,5 @@
 *.out
 *.aux
 out
+.devenv
 .idea
