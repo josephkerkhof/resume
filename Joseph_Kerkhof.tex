@@ -151,10 +151,9 @@
 
     \section{Summary}
     \vspace{3pt}
-    Senior Backend Engineer with 7+ years designing secure, reliable web and cloud systems.
-    Built a production AI workflow platform, architected Kubernetes observability infrastructure, and delivered financial products with 90\%+ test coverage and sub-second response times.
-    Deep expertise in PHP/Laravel, system design, and backend fundamentals, with hands-on experience in Go and Python.
-    Uses Claude Code and OpenCode with MCP integrations, repository context files, specialized skills, and automated guardrails to streamline development and review.
+    Senior Backend Engineer with 7+ years building and running production systems, mostly in PHP, plus Python and Go.
+    Owns work from design through operations: data models, queues, integrations, CI/CD, monitoring, and upgrades.
+    Recently led an AI-assisted email production pipeline to launch and built a company-wide OpenTelemetry platform.
 
 %----------- SKILLS -----------
 
@@ -190,11 +189,13 @@
     {Senior Developer}{Mar 2026 \textbf{--} Present}
     {Tech Stack: Laravel, Laravel AI, PostgreSQL, Python, Kubernetes, OpenTelemetry}
     \resumeItemListStart{}
-    \resumeItem{Started and architected a modular Laravel AI platform from the ground up, establishing reusable workflows and modules now developed by three engineers to automate copywriting and an 11-stage email workflow across five business systems.}
-    \resumeItem{Engineered AI-backed orchestrator and specialist agents with tools, persistent multimodal conversations, structured outputs, token-cost telemetry, and deterministic fallbacks; also built the first version of the email workflow in Python/LangGraph and ran it in production pilots.}
-    \resumeItem{Built and refined GitHub Actions CI/CD with Pint, maximum-level PHPStan/Larastan, TypeScript and security checks, 1,500+ Pest tests across five layers, sharded browser tests, atomic releases, and rollback support.}
-    \resumeItem{Designed and deployed ClickStack/HyperDX on autoscaling Kubernetes with Terraform and Helm, unifying logs, metrics, traces, RUM/session replay, AI cost telemetry, dashboards, alerts, uptime checks, backups, SSO, configuration-as-code, and documented recovery procedures.}
-    \resumeItem{Translated sparse product direction into iterative mockups with Claude Design, defined requirements with stakeholders, and guided junior engineers through PR reviews and daily technical feedback.}
+    \resumeItem{Led an AI-assisted email production pipeline from plan to launch in four weeks: client-approved copy passes a QA gate, then becomes CRM records and an email draft automatically, replacing manual build steps. Live for client emails since Sep 2026.}
+    \resumeItem{Made an approval-to-CRM job chain safe to retry: approvals are frozen as content-hashed snapshots, each external write is a checkpointed step, and unclear CRM responses park the run for reconciliation instead of creating duplicates.}
+    \resumeItem{Built the company's first AI agent, which turns a creative brief into an email draft, in Python/LangGraph with structured LLM outputs and deterministic fallbacks; later moved it into the main Laravel app behind a parity-checked dark launch and retired the separate service.}
+    \resumeItem{Started and led a company-wide observability platform on self-hosted ClickStack, OpenTelemetry, and Kubernetes instead of a paid vendor; it now covers 7 apps with tracing, alerts, and session replay. Used it to find production users on an unmonitored staging backend and moved them in one afternoon.}
+    \resumeItem{Own production operations across bare-metal and cloud Linux servers: led three MySQL 8.0 to 8.4 cluster upgrades before end of life (catching a schema break first), patched a server 435 packages behind in a 35-minute window, and added nightly backups with a tested restore.}
+    \resumeItem{Restored a static-analysis gate that a merge had silently disabled for a month: PHPStan at max level with no baseline, about 550 findings cleared, two production bugs fixed. Cut median CI time about 40\% with timing-balanced test shards.}
+    \resumeItem{Introduced PR reviews and CI checks to a newly grown dev team, and mentored junior engineers through pairing and code review.}
     \resumeItemListEnd{}
 
     \resumeSubheading%
